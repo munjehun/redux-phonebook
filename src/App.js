@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container, Row, Col } from "react-bootstrap";
+import ContactInput from "./components/ContactInput";
+import ContactList from "./components/ContactList";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./style.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 className="title" style={{ margin: 30 }}>
+        연락처
+      </h1>
+      <Container>
+        {/* Row : 가로줄 */}
+        <Row>
+          {/* Col : 세로 칸, lg={6} : 12칸 중 6의 비율로 차지*/}
+          <Col lg={6}>
+            <ContactInput />
+          </Col>
+          <Col lg={6}>
+            <ContactList />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
